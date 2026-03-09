@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import { navLinksdata } from '../../constants/index.js';
+import { navLinksdata } from "../../constants/index.js";
 
 const Navbar = () => {
-  const [showMenu, setShowMenu]=useState(false)
-  
+  const [showMenu, setShowMenu] = useState(false);
+  const redirectToLinkdin = () => {
+    window.open("https://www.linkedin.com/in/lasantha-dinidu", "_blank");
+  };
+
   return (
     <div className="w-full h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
-      
       <div>
         <ul className="hidden mdl:inline-flex items-center gap-6 lg:gap-10">
           {navLinksdata.map(({ _id, title, link }) => (
@@ -41,11 +43,14 @@ const Navbar = () => {
           <div className="w-[80%] h-screen overflow-scroll absolute top-0 left-0 bg-gray-900 p-4 scrollbar-hide">
             <div className="flex flex-col gap-8 py-2 relative">
               <div>
-                
                 <p className="text-sm text-gray-400 mt-2">
-                As a Full Stack Developer, I design, develop, and maintain both the front-end and back-end components of web applications.
-                 My responsibilities include creating user-friendly interfaces, ensuring seamless server-side functionality, managing databases,
-                  and integrating APIs. I work across the entire software development lifecycle, delivering scalable, efficient, and high-quality solutions.
+                  As a Full Stack Developer, I design, develop, and maintain
+                  both the front-end and back-end components of web
+                  applications. My responsibilities include creating
+                  user-friendly interfaces, ensuring seamless server-side
+                  functionality, managing databases, and integrating APIs. I
+                  work across the entire software development lifecycle,
+                  delivering scalable, efficient, and high-quality solutions.
                 </p>
               </div>
               <ul className="flex flex-col gap-4">
@@ -76,10 +81,10 @@ const Navbar = () => {
                   <span className="bannerIcon">
                     <FaFacebookF />
                   </span>
-                  
-                  <span className="bannerIcon">
+
+                  <button onClick={redirectToLinkdin}>
                     <FaLinkedinIn />
-                  </span>
+                  </button>
                 </div>
               </div>
               <span
@@ -94,6 +99,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
