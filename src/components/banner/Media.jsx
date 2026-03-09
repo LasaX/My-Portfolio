@@ -1,7 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaLinkedinIn, FaReact } from "react-icons/fa";
 import {
-  SiTailwindcss,
   SiNextdotjs,
   SiMongodb,
   SiNodedotjs,
